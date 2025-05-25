@@ -77,7 +77,9 @@
 
 <body>
     <div class="container">
+        <!-- link to firebase page -->
         <a href="upload.html">Ir a Firebase</a>
+        <!-- player data form -->
         <h3>Player Data</h3>
         <label>Player ID:</label>
         <input type="text" id="idPlayer" required>
@@ -88,14 +90,19 @@
         <label>Username:</label>
         <input type="text" id="username" required>
 
+        <!-- button to upload player data -->
         <button id="submitPlayer">Upload Player Data</button>
 
         <div class="actions">
+            <!-- button to load players -->
             <button id="loadBtn">Load jugadores</button>
+            <!-- list of players -->
             <ul id="playerList"></ul>
+            <!-- button to migrate players from firebase -->
             <button id="migrateBtn">Migrar jugadores desde Firebase</button>
         </div>
     </div>
+    <!-- main javascript module -->
     <script type="module" src="frontend/login.js"></script>
 </body>
 </html>

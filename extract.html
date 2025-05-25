@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -73,34 +74,40 @@
 </head>
 <body>
 
-  <h1>Extracción de datos desde Firebase</h1>
+  <!-- main title -->
+  <h1>extracción de datos desde firebase</h1>
 
+  <!-- section to consult all data -->
   <section>
-    <h2>Consultar todos los datos</h2>
-    <button id="btn-consultar">Consultar datos</button>
+    <h2>consultar todos los datos</h2>
+    <button id="btn-consultar">consultar datos</button>
   </section>
 
+  <!-- section to filter data -->
   <section>
-    <h2>Filtrar datos</h2>
-    <label for="campo-filtro">Campo:</label>
-    <input type="text" id="campo-filtro" placeholder="Ej: nombre">
+    <h2>filtrar datos</h2>
+    <label for="campo-filtro">campo:</label>
+    <input type="text" id="campo-filtro" placeholder="ej: nombre">
     
-    <label for="valor-filtro">Valor:</label>
-    <input type="text" id="valor-filtro" placeholder="Ej: Juan">
+    <label for="valor-filtro">valor:</label>
+    <input type="text" id="valor-filtro" placeholder="ej: juan">
     
-    <button id="btn-filtrar">Filtrar</button>
+    <button id="btn-filtrar">filtrar</button>
   </section>
 
+  <!-- section to show results -->
   <section>
-    <h2>Resultados</h2>
+    <h2>resultados</h2>
     <div id="resultados"></div>
   </section>
 
+  <!-- section for etl process -->
   <section>
-    <h2>Proceso ETL</h2>
-    <button id="btn-etl">Ejecutar ETL (Firebase → MySQL)</button>
+    <h2>proceso etl</h2>
+    <button id="btn-etl">ejecutar etl (firebase → mysql)</button>
   </section>
 
+  <!-- main script -->
   <script src="./frontend/Extract.js"></script>
 </body>
 </html>

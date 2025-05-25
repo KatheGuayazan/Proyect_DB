@@ -1,20 +1,24 @@
-// Registrar usuario
+// register user
 document.getElementById("submitPlayer").addEventListener("click", () => {
+    // get input values
     const idPlayer = document.getElementById("idPlayer").value;
     const name = document.getElementById("name").value;
     const username = document.getElementById("username").value;
 
+    // check if all fields are filled
     if (!idPlayer || !name || !username) {
-        alert("All fields are required.");
+        alert("all fields are required.");
         return;
     }
 
+    // create data object
     const data = {
         idPlayer: idPlayer,
         name: name,
         username: username
     };
 
+    // send post request to register
     fetch("http://localhost:3000/register", {
         method: "POST",
         headers: {
@@ -23,96 +27,57 @@ document.getElementById("submitPlayer").addEventListener("click", () => {
         body: JSON.stringify(data)
     })
         .then(response => {
+            // check if response is ok
             if (response.ok) {
                 return response.text();
             } else {
-                throw new Error("Registration failed.");
+                throw new Error("registration failed.");
             }
         })
         .then(message => {
+            // show success message and clear fields
             alert(message);
             document.getElementById("idPlayer").value = "";
             document.getElementById("name").value = "";
             document.getElementById("username").value = "";
         })
         .catch(error => {
-            console.error("Error:", error);
-            alert("An error occurred while registering.");
+            // handle error
+            console.error("error:", error);
+            alert("an error occurred while registering.");
         });
 });
 
-  document.getElementById('loadBtn').addEventListener('click', () => {
+// load players list
+document.getElementById('loadBtn').addEventListener('click', () => {
     fetch('http://localhost:3000/players')
-      .then(response => response.json())
-      .then(data => {
-        const list = document.getElementById('playerList');
-        list.innerHTML = ''; // Limpia lista previa si ya se cargó
-        data.forEach(player => {
-          const item = document.createElement('li');
-          item.textContent = `Id: (${player.idPlayer}) name: (${player.name}) username: (${player.username})`;
-          list.appendChild(item);
-        });
-      })
-    .catch(error => console.error('Error:', error));
-  });
-
-document.getElementById("migrateBtn").addEventListener("click", () => {
-  fetch("http://localhost:3000/migrar-players")
-    .then(response => response.json())
-    .then(result => {
-      alert(`Migración completada:\nÉxitos: ${result.exitosos}\nFallos: ${result.fallidos}`);
-    })
-    .catch(error => {
-      console.error("Error al migrar jugadores:", error);
-      alert("Hubo un error al migrar los datos.");
-    });
+        .then(response => response.json())
+        .then(data => {
+            // get player list element
+            const list = document.getElementById('playerList');
+            list.innerHTML = ''; // clear previous list
+            // add each player to the list
+            data.forEach(player => {
+                const item = document.createElement('li');
+                item.textContent = `id: (${player.idPlayer}) name: (${player.name}) username: (${player.username})`;
+                list.appendChild(item);
+            });
+        })
+        .catch(error => console.error('error:', error));
 });
 
-/*  document.getElementById("submitMatches").addEventListener("click", () => {
-    const idMatches = document.getElementById("idMatches").value;
-    const date = document.getElementById("date").value;
-    const time = document.getElementById("time").value;
-    const score = document.getElementById("score").value;
-    const levelIdLevel = document.getElementById("levelIdLevel").value;
-    const LavelName = document.getElementById("LavelName").value;
-    const difficultyIdDifficulty = document.getElementById("difficultyIdDifficulty").value;
-    const difficultyName = document.getElementById("difficultyName").value;
-
-    if (!idMatches || !date || !time || !score || !levelIdLevel || !LavelName || !difficultyIdDifficulty || !difficultyName) {
-        alert("All fields are required.");
-        return;
-    }
-
-    const data = {
-        idMatches: idMatches,
-        date: date,
-        time: time,
-        score: score,
-        levelIdLevel: levelIdLevel,
-        LavelName: LavelName,
-        difficultyIdDifficulty: difficultyIdDifficulty,
-        difficultyName: difficultyName,
-    };
-
-    fetch("http://localhost:3000/register", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    })
-        .then(response => {
-            if (response.ok) {
-                return response.text();
-            } else {
-                throw new Error("Registration failed.");
-            }
-        })
-        .then(message => {
-            alert(message);
+// migrate players
+document.getElementById("migrateBtn").addEventListener("click", () => {
+    fetch("http://localhost:3000/migrar-players")
+        .then(response => response.json())
+        .then(result => {
+            // show migration result
+            alert(`migración completada:\néxitos: ${result.exitosos}\nfallos: ${result.fallidos}`);
         })
         .catch(error => {
-            console.error("Error:", error);
-            alert("An error occurred while registering.");
+            // handle migration error
+            console.error("error al migrar jugadores:", error);
+            alert("hubo un error al migrar los datos.");
         });
-});*/
+});
+

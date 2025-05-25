@@ -206,7 +206,6 @@ function generarMatchAleatorio() {
     };
 }
 
-//Main bulk load function
 async function realizarCargaMasiva(cantidad) {
     const resultados = {
         jugadores: { exitosos: 0, fallidos: 0 },

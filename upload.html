@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Subir datos a la base NoSQL</title>
+    <title>subir datos a la base nosql</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -73,62 +74,82 @@
 </head>
 <body>
     <div class="container">
-        <a href="index.html">My NoSQL</a>
-        <h1>Upload data</h1>
+        <!-- link to home page -->
+        <a href="index.html">my nosql</a>
+        <!-- main title -->
+        <h1>upload data</h1>
 
         <div class="section">
-            <h2>Manual Loading</h2>
-            <h3>Player Data</h3>
-            <label>Player ID:</label>
+            <!-- manual loading section -->
+            <h2>manual loading</h2>
+            <h3>player data</h3>
+            <!-- player id input -->
+            <label>player id:</label>
             <input type="text" id="idPlayer" required>
 
-            <label>Name:</label>
+            <!-- player name input -->
+            <label>name:</label>
             <input type="text" id="name" required>
 
-            <label>Username:</label>
+            <!-- player username input -->
+            <label>username:</label>
             <input type="text" id="username" required>
 
-            <button id="submitPlayer">Upload Player Data</button>
+            <!-- upload player data button -->
+            <button id="submitPlayer">upload player data</button>
         </div>
 
         <div class="section">
-            <h3>Game Data</h3>
-            <label>Id Matches:</label>
+            <h3>game data</h3>
+            <!-- match id input -->
+            <label>id matches:</label>
             <input type="date" id="idMatches" required>
 
-            <label>Date:</label>
+            <!-- date input -->
+            <label>date:</label>
             <input type="date" id="date" required>
 
-            <label>Time:</label>
+            <!-- time input -->
+            <label>time:</label>
             <input type="time" id="time" required>
 
-            <label>Score:</label>
+            <!-- score input -->
+            <label>score:</label>
             <input type="number" id="score" step="0.1" required>
 
-            <label>Level Name:</label>
+            <!-- level name input -->
+            <label>level name:</label>
             <input type="text" id="LevelName" required>
 
-            <label>Level ID:</label>
+            <!-- level id input -->
+            <label>level id:</label>
             <input type="number" id="levelId" required>
 
-            <label>Difficulty Name:</label>
+            <!-- difficulty name input -->
+            <label>difficulty name:</label>
             <input type="text" id="difficultyName" required>
 
-            <label>Difficulty ID:</label>
+            <!-- difficulty id input -->
+            <label>difficulty id:</label>
             <input type="number" id="difficultyId" required>
 
-            <button type="submit" id="submitButton">Save data</button>
+            <!-- save data button -->
+            <button type="submit" id="submitButton">save data</button>
         </div>
 
         <hr>
 
         <div class="section">
-            <h2>Carga Masiva</h2>
-            <label>Cantidad de registros a generar (máx. 100):</label>
+            <!-- bulk load section -->
+            <h2>carga masiva</h2>
+            <!-- number of records input -->
+            <label>cantidad de registros a generar (máx. 100):</label>
             <input type="number" name="cantidad" min="1" max="100" required>
-            <button type="submit" id="generateButton">Generar registros</button>
+            <!-- generate records button -->
+            <button type="submit" id="generateButton">generar registros</button>
         </div>
     </div>
 </body>
 </html>
+<!-- upload script -->
 <script src="./frontend/Upload.js"></script>
