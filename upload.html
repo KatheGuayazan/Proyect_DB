@@ -1,68 +1,134 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Subir datos a la base NoSQL</title>
-
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: #fff;
+            max-width: 500px;
+            margin: 40px auto 0 auto;
+            padding: 32px 28px 24px 28px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        h1, h2, h3 {
+            color: #2d3e50;
+            margin-top: 0;
+        }
+        label {
+            display: block;
+            margin-top: 16px;
+            margin-bottom: 4px;
+            color: #444;
+            font-weight: 500;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="time"] {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 8px;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 14px;
+            padding: 10px 20px;
+            background: #1976d2;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #125ea8;
+        }
+        a {
+            display: inline-block;
+            margin-bottom: 18px;
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        hr {
+            margin: 32px 0 24px 0;
+            border: none;
+            border-top: 1px solid #eee;
+        }
+        .section {
+            margin-bottom: 24px;
+        }
+    </style>
 </head>
-
 <body>
-<a href="index.html">MySQL</a>
-    <h1>Upload data</h1>
+    <div class="container">
+        <a href="index.html">My NoSQL</a>
+        <h1>Upload data</h1>
 
-    <!-- Carga Manual -->
-    <h2>Manual Loading</h2>
-    <h3>Player Data</h3>
+        <div class="section">
+            <h2>Manual Loading</h2>
+            <h3>Player Data</h3>
+            <label>Player ID:</label>
+            <input type="text" id="idPlayer" required>
 
-    <label>Player ID:</label>
-    <input type="text" id="idPlayer" required><br>
+            <label>Name:</label>
+            <input type="text" id="name" required>
 
-    <label>Name:</label>
-    <input type="text" id="name" required><br>
+            <label>Username:</label>
+            <input type="text" id="username" required>
 
-    <label>Username:</label>
-    <input type="text" id="username" required><br>
+            <button id="submitPlayer">Upload Player Data</button>
+        </div>
 
-    <button id="submitPlayer">Upload Player Data</button>
+        <div class="section">
+            <h3>Game Data</h3>
+            <label>Id Matches:</label>
+            <input type="date" id="idMatches" required>
 
-    <h3>Game Data</h3>
+            <label>Date:</label>
+            <input type="date" id="date" required>
 
-    <label>Id Matches:</label>
-    <input type="date" id="idMatches" required><br>
+            <label>Time:</label>
+            <input type="time" id="time" required>
 
-    <label>Date:</label>
-    <input type="date" id="date" required><br>
+            <label>Score:</label>
+            <input type="number" id="score" step="0.1" required>
 
-    <label>Time:</label>
-    <input type="time" id="time" required><br>
+            <label>Level Name:</label>
+            <input type="text" id="LevelName" required>
 
-    <label>score:</label>
-    <input type="number" id="score" step="0.1" required><br>
+            <label>Level ID:</label>
+            <input type="number" id="levelId" required>
 
-    <label>Level Name:</label>
-    <input type="text" id="LevelName" required><br>
+            <label>Difficulty Name:</label>
+            <input type="text" id="difficultyName" required>
 
-    <label>Level ID:</label>
-    <input type="number" id="levelId" required><br>
+            <label>Difficulty ID:</label>
+            <input type="number" id="difficultyId" required>
 
-    <label>Difficulty Name:</label>
-    <input type="text" id="difficultyName" required><br>
+            <button type="submit" id="submitButton">Save data</button>
+        </div>
 
-    <label>Difficulty ID:</label>
-    <input type="number" id="difficultyId" required><br>
+        <hr>
 
-    <button type="submit" id="submitButton">Save data</button>
-
-    <hr>
-
-    <!--Carga Masiva -->
-    <h2>Carga Masiva</h2>
-        <label>Cantidad de registros a generar (máx. 100):</label>
-        <input type="number" name="cantidad" min="1" max="100" required><br>
-        <button type="submit" id="generateButton">Generar registros</button>
-
-
+        <div class="section">
+            <h2>Carga Masiva</h2>
+            <label>Cantidad de registros a generar (máx. 100):</label>
+            <input type="number" name="cantidad" min="1" max="100" required>
+            <button type="submit" id="generateButton">Generar registros</button>
+        </div>
+    </div>
 </body>
-
 </html>
 <script src="./frontend/Upload.js"></script>

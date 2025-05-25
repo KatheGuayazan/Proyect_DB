@@ -3,19 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <title>Extracción de datos Firebase</title>
- 
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6fb;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      background: #1976d2;
+      color: #fff;
+      margin: 0;
+      padding: 24px 0;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    section {
+      background: #fff;
+      margin: 32px auto;
+      padding: 24px 32px;
+      border-radius: 12px;
+      max-width: 400px;
+      box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+    }
+    h2 {
+      color: #1976d2;
+      margin-top: 0;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #b0bec5;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+    button {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #1565c0;
+    }
+    #resultados {
+      min-height: 40px;
+      background: #f1f8e9;
+      border: 1px solid #c5e1a5;
+      border-radius: 6px;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 0.97em;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
 
   <h1>Extracción de datos desde Firebase</h1>
 
-  <!-- Botón para consultar todos los datos -->
   <section>
     <h2>Consultar todos los datos</h2>
     <button id="btn-consultar">Consultar datos</button>
   </section>
 
-  <!-- Campo y botón para filtrar datos -->
   <section>
     <h2>Filtrar datos</h2>
     <label for="campo-filtro">Campo:</label>
@@ -27,13 +91,11 @@
     <button id="btn-filtrar">Filtrar</button>
   </section>
 
-  <!-- Resultado de las consultas -->
   <section>
     <h2>Resultados</h2>
     <div id="resultados"></div>
   </section>
 
-  <!-- Botón para ejecutar proceso ETL -->
   <section>
     <h2>Proceso ETL</h2>
     <button id="btn-etl">Ejecutar ETL (Firebase → MySQL)</button>

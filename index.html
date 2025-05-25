@@ -4,32 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <title>Mixed DB Proyect</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f6fb;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            padding: 32px 24px;
+        }
+        h3 {
+            margin-top: 0;
+            color: #2d3a4b;
+            letter-spacing: 1px;
+        }
+        label {
+            display: block;
+            margin-top: 16px;
+            color: #555;
+            font-size: 15px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px 10px;
+            margin-top: 4px;
+            border: 1px solid #cfd8dc;
+            border-radius: 6px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px 0;
+            background: #4f8cff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        .actions {
+            margin-top: 32px;
+            text-align: center;
+        }
+        #playerList {
+            margin: 16px 0;
+            padding-left: 18px;
+        }
+        a {
+            display: inline-block;
+            margin-bottom: 24px;
+            color: #4f8cff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
-    <a href="upload.html">Firebase</a>
-    <div>
-
+    <div class="container">
+        <a href="upload.html">Ir a Firebase</a>
         <h3>Player Data</h3>
-
         <label>Player ID:</label>
-        <input type="text" id="idPlayer" required><br>
+        <input type="text" id="idPlayer" required>
 
         <label>Name:</label>
-        <input type="text" id="name" required><br>
+        <input type="text" id="name" required>
 
         <label>Username:</label>
-        <input type="text" id="username" required><br>
+        <input type="text" id="username" required>
 
         <button id="submitPlayer">Upload Player Data</button>
 
-    </div><br><br>
-    <div>
-        <button id="loadBtn">Load jugadores</button><br><br>
-        <ul id="playerList"></ul>        
-        <button id="migrateBtn">Migrar jugadores desde Firebase</button>
+        <div class="actions">
+            <button id="loadBtn">Load jugadores</button>
+            <ul id="playerList"></ul>
+            <button id="migrateBtn">Migrar jugadores desde Firebase</button>
+        </div>
     </div>
-
-
     <script type="module" src="frontend/login.js"></script>
 </body>
+</html>
