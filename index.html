@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mixed DB Proyect</title>
+</head>
+
+<body>
+    <a href="upload.html">Firebase</a>
+    <div>
+
+        <h3>Player Data</h3>
+
+        <label>Player ID:</label>
+        <input type="text" id="idPlayer" required><br>
+
+        <label>Name:</label>
+        <input type="text" id="name" required><br>
+
+        <label>Username:</label>
+        <input type="text" id="username" required><br>
+
+        <button id="submitPlayer">Upload Player Data</button>
+
+    </div><br><br>
+    <div>
+        <button id="loadBtn">Load jugadores</button><br><br>
+        <ul id="playerList"></ul>        
+        <button id="migrateBtn">Migrar jugadores desde Firebase</button>
+    </div>
+
+
+    <script type="module" src="frontend/login.js"></script>
+</body>
